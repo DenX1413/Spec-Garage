@@ -1,0 +1,1449 @@
+/* ========== ОСНОВНЫЕ СТИЛИ ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-dim: rgba(255, 255, 255, 0.72);
+    --text-faint: rgba(255, 255, 255, 0.48);
+    --border-color: rgba(255, 255, 255, 0.12);
+    --card-bg: #161311;
+    --card-bg-2: #1c1815;
+    --input-bg: #201b17;
+    --gray-text: rgba(255, 255, 255, 0.6);
+
+    /* Палитра по цветам логотипа СПЕЦТЕХНИК: красный + тёмно-синий + белый */
+    --brand-orange: #e5000c;
+    --brand-orange-dark: #b8000a;
+    --brand-yellow: #3652d9;
+    --brand-yellow-dark: #253aa8;
+    --steel: #2b2b2b;
+    --bg-black: #0a0908;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Rajdhani', 'Oswald', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+    background: var(--bg-black);
+    background-image:
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 14px);
+    color: #fff;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .hero-title, .section-heading, .hero-eyebrow, .topbar-btn, .btn {
+    font-family: 'Oswald', 'Rajdhani', sans-serif;
+}
+
+.page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2rem;
+}
+
+/* ========== АНИМАЦИИ ========== */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-up {
+    animation: fadeUp 0.7s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
+}
+
+.animate-slide {
+    animation: slideIn 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+}
+
+.animate-scale {
+    animation: scaleIn 0.5s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.2s; opacity: 0; }
+.delay-3 { animation-delay: 0.3s; opacity: 0; }
+.delay-4 { animation-delay: 0.4s; opacity: 0; }
+.delay-5 { animation-delay: 0.5s; opacity: 0; }
+.delay-6 { animation-delay: 0.6s; opacity: 0; }
+
+/* ========================================================= */
+/* ========== ШАПКА (ФИКСИРОВАННЫЙ НАВБАР) =================== */
+/* ========================================================= */
+.topbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(10, 9, 8, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--brand-orange);
+}
+
+.topbar-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.topbar-logo {
+    flex-shrink: 0;
+    line-height: 0;
+    display: block;
+}
+
+.topbar-logo img {
+    height: 150px;
+    width: 150px;
+    max-width: 150px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+}
+
+.topbar-nav {
+    display: none;
+    align-items: center;
+    gap: 0.3rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.topbar-nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 0.6rem 0.85rem;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+    white-space: nowrap;
+}
+
+@media (min-width: 900px) and (max-width: 1140px) {
+    .topbar-nav a {
+        padding: 0.6rem 0.55rem;
+        font-size: 0.82rem;
+    }
+}
+
+.topbar-nav a:hover {
+    color: var(--brand-yellow);
+    background: rgba(229, 0, 12, 0.08);
+}
+
+.topbar-btn {
+    flex-shrink: 0;
+    background: var(--brand-orange);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border-radius: 6px;
+    padding: 0.7rem 1.3rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: filter 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.topbar-btn:hover {
+    background: var(--brand-orange-dark);
+    transform: translateY(-1px);
+}
+
+@media (min-width: 900px) {
+    .topbar-nav {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar-logo img {
+        height: 100px;
+        width: 100px;
+        max-width: 100px;
+    }
+    .topbar-btn {
+        font-size: 0.8rem;
+        padding: 0.55rem 0.9rem;
+    }
+    .topbar-btn span.btn-text-full {
+        display: none;
+    }
+}
+
+/* ========================================================= */
+/* ========== HERO (СТАТИКА, БЕЗ ВИДЕО) ====================== */
+/* ========================================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    background:
+        linear-gradient(180deg, rgba(10,9,8,0.4) 0%, rgba(10,9,8,0.95) 85%, #0a0908 100%),
+        repeating-linear-gradient(45deg, #171310 0px, #171310 22px, #1d1712 22px, #1d1712 44px);
+    padding: 5.5rem 1.5rem 4rem;
+    overflow: hidden;
+    border-bottom: 4px solid var(--brand-orange);
+}
+
+.hero-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(54, 82, 217,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(54, 82, 217,0.05) 1px, transparent 1px);
+    background-size: 42px 42px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+}
+
+.hero-stripes {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 14px;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--brand-yellow),
+        var(--brand-yellow) 20px,
+        #0a0908 20px,
+        #0a0908 40px
+    );
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(229, 0, 12, 0.12);
+    border: 1px solid rgba(229, 0, 12, 0.4);
+    color: var(--brand-yellow);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    margin-bottom: 1.6rem;
+}
+
+.hero-title {
+    font-family: 'Bebas Neue', 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.6rem, 8vw, 5.6rem);
+    line-height: 0.98;
+    letter-spacing: 0.02em;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title-accent {
+    color: var(--brand-orange);
+    text-shadow: 0 0 26px rgba(229, 0, 12, 0.45);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    font-weight: 500;
+    color: var(--text-dim);
+    max-width: 680px;
+    margin: 0 auto 2.2rem;
+    line-height: 1.55;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.9rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--brand-orange);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--brand-orange-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border-color: var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--brand-yellow);
+    color: var(--brand-yellow);
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.hero-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 130px;
+}
+
+.hero-stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    color: var(--brand-yellow);
+    line-height: 1;
+}
+
+.hero-stat-label {
+    font-size: 0.9rem;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.4rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 3.5rem 1.2rem 3rem;
+    }
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-stats {
+        gap: 1.4rem 1.8rem;
+    }
+}
+
+/* ========== ЗАГОЛОВОК СЕКЦИИ ========== */
+.section-heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: #fff;
+    margin: 3.6rem 0 0.6rem;
+    position: relative;
+    padding-left: 1.3rem;
+}
+
+.section-heading::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    bottom: 0.1em;
+    width: 6px;
+    border-radius: 3px;
+    background: linear-gradient(var(--brand-orange), var(--brand-yellow));
+}
+
+.section-lead {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    max-width: 720px;
+    margin: 0 0 1.8rem 1.3rem;
+}
+
+/* ========================================================= */
+/* ========== ПЛИТКИ ВИДОВ ТЕХНИКИ ============================ */
+/* ========================================================= */
+.tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.tile {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--brand-orange);
+    border-radius: 10px;
+    padding: 1.8rem 1.5rem;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.tile:hover {
+    transform: translateY(-4px);
+    background: var(--card-bg-2);
+    border-top-color: var(--brand-yellow);
+}
+
+.tile-icon {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(229, 0, 12, 0.12);
+    border-radius: 8px;
+    color: var(--brand-orange);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tile h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.tile p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.45;
+}
+
+/* ========================================================= */
+/* ========== ПРАЙС-ЛИСТ ====================================== */
+/* ========================================================= */
+.price-table-wrap {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.price-table thead th {
+    background: var(--brand-orange-dark);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    padding: 0.9rem 1.5rem;
+    text-align: left;
+}
+
+.price-table thead th:last-child {
+    text-align: right;
+}
+
+.price-table tbody td {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-dim);
+    font-size: 1.02rem;
+}
+
+.price-table tbody td:first-child i {
+    color: var(--brand-orange);
+    width: 20px;
+    margin-right: 0.6rem;
+}
+
+.price-table tbody td:last-child {
+    text-align: right;
+    color: var(--brand-yellow);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.price-table tbody tr:hover {
+    background: rgba(229, 0, 12, 0.05);
+}
+
+@media (max-width: 600px) {
+    .price-table thead th,
+    .price-table tbody td {
+        padding: 0.75rem 0.9rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================================= */
+/* ========== ЭТАПЫ РЕМОНТА =================================== */
+/* ========================================================= */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.step-card {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2rem 1.5rem 1.6rem;
+    overflow: hidden;
+}
+
+.step-number {
+    position: absolute;
+    top: -0.4rem;
+    right: 0.8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.2rem;
+    color: rgba(54, 82, 217, 0.12);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(54, 82, 217, 0.12);
+    border-radius: 8px;
+    color: var(--brand-yellow);
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.step-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.step-card p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.45;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================================= */
+/* ========== ПОЧЕМУ МЫ ======================================= */
+/* ========================================================= */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.why-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--brand-orange);
+    border-radius: 8px;
+    padding: 1.7rem 1.5rem;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.why-card:hover {
+    border-left-color: var(--brand-yellow);
+    background: var(--card-bg-2);
+}
+
+.why-icon {
+    color: var(--brand-orange);
+    font-size: 1.6rem;
+    margin-bottom: 0.9rem;
+}
+
+.why-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.why-card p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.45;
+}
+
+/* ========== ФОРМА + КАРТА ========== */
+.contact-with-map {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.8rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    border-top: 3px solid var(--brand-orange);
+    padding: 2.8rem;
+    margin: 0 0 1.8rem;
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--brand-orange);
+    align-items: center;
+    justify-content: center;
+}
+
+.form-column {
+    flex: 1 1 350px;
+    min-width: 300px;
+    position: relative;
+    padding-bottom: 3.5rem;
+}
+
+.form-column h3 {
+    font-size: 1.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.form-column > p {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    margin-bottom: 1.6rem;
+}
+
+.simple-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.simple-form input,
+.simple-form textarea {
+    width: 100%;
+    padding: 1.15rem 1.4rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    background: var(--input-bg);
+    color: #fff;
+    resize: none;
+}
+
+.simple-form input::placeholder,
+.simple-form textarea::placeholder {
+    color: var(--text-faint);
+}
+
+.simple-form textarea {
+    border-radius: 8px;
+}
+
+.simple-form input:focus,
+.simple-form textarea:focus {
+    border-color: var(--brand-orange);
+    outline: none;
+    background: var(--input-bg);
+    box-shadow: 0 0 0 3px rgba(229, 0, 12, 0.2);
+}
+
+.simple-form button {
+    background: var(--brand-orange);
+    color: #fff;
+    border: none;
+    padding: 1.15rem 2.1rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: filter 0.2s;
+    margin-top: 0.5rem;
+}
+
+.simple-form button:hover {
+    background: var(--brand-orange-dark);
+}
+
+.form-contacts {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 1.05rem;
+    color: var(--text-dim);
+}
+
+.form-contacts p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.form-contacts i {
+    width: 20px;
+    color: var(--brand-yellow);
+}
+
+.map-column {
+    flex: 1 1 350px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-column h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.map-column h4 i {
+    color: var(--brand-orange);
+    margin-right: 8px;
+}
+
+.yandex-map-container {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    margin: 0 auto;
+    filter: grayscale(0.3) invert(0.92) contrast(0.9);
+}
+
+.yandex-map-container iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
+
+.map-address {
+    margin-top: 0.8rem;
+    font-size: 0.98rem;
+    color: var(--text-dim);
+    text-align: center;
+    width: 100%;
+}
+
+.map-address i {
+    color: var(--brand-orange);
+    margin-right: 5px;
+}
+
+.map-address span {
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 4px;
+    color: var(--text-faint);
+}
+
+.form-column .form-notification {
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    margin-top: 0;
+    z-index: 5;
+}
+
+@media (max-width: 780px) {
+    .contact-with-map {
+        flex-direction: column;
+        padding: 1.8rem;
+        gap: 1.5rem;
+    }
+
+    .form-column,
+    .map-column {
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 4.5rem;
+    }
+
+    .yandex-map-container {
+        max-width: 100%;
+    }
+
+    .map-column h4,
+    .map-address {
+        text-align: center;
+    }
+
+    .form-column .form-notification {
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-with-map {
+        padding: 1.2rem;
+        gap: 1.2rem;
+    }
+
+    .form-column,
+    .map-column {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding-bottom: 5rem;
+    }
+
+    .yandex-map-container iframe {
+        height: 250px;
+    }
+
+    .form-column .form-notification {
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.5rem;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        padding: 10px 16px;
+        border-radius: 40px;
+    }
+}
+
+/* ========== СТИЛИ ДЛЯ СЧЕТЧИКОВ СИМВОЛОВ ========== */
+.char-counter {
+    font-size: 0.75rem;
+    color: var(--gray-text);
+    text-align: right;
+    margin-top: 4px;
+    opacity: 0.7;
+    transition: color 0.2s ease;
+    font-family: 'Rajdhani', monospace;
+}
+
+.char-counter.warning {
+    color: #ff6b6b;
+    font-weight: 500;
+    opacity: 1;
+}
+
+.simple-form.was-submitted input:invalid,
+.simple-form.was-submitted textarea:invalid,
+.simple-form input.touched:invalid,
+.simple-form textarea.touched:invalid {
+    border-color: #ff6b6b;
+}
+
+.simple-form input.touched:valid,
+.simple-form textarea.touched:valid {
+    border-color: var(--border-color);
+}
+
+/* ========== ФУТЕР ========== */
+.divider {
+    border: none;
+    border-top: 2px solid transparent;
+    border-image: linear-gradient(90deg, var(--brand-orange), var(--brand-yellow)) 1;
+    opacity: 0.6;
+    margin: 2rem 0 1rem;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    color: var(--text-dim);
+    padding-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+.footer-bottom i {
+    color: var(--brand-yellow);
+    margin-right: 5px;
+}
+
+.footer-slogan i {
+    color: var(--brand-orange);
+}
+
+.footer-quote {
+    font-style: italic;
+    font-size: 1.05rem;
+    padding: 1.2rem 0 1rem;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    opacity: 0.9;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 1.5rem 0 0.5rem 0;
+    margin-top: 1rem;
+    color: var(--text-faint);
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border-color);
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 780px) {
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* ========== КНОПКА "НАВЕРХ" ========== */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: var(--brand-orange);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background: var(--brand-orange-dark);
+    transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 52px;
+        height: 52px;
+        font-size: 1.2rem;
+    }
+}
+
+/* ========================================================= */
+/* ========== БОКСЫ ЦЕХА (ВИДЫ ТЕХНИКИ) ======================= */
+/* ========================================================= */
+.bay-stand {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.6rem 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.bay-box {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--brand-orange);
+    border-radius: 10px;
+    padding: 1.8rem 1.5rem 1.5rem;
+}
+
+.bay-tag {
+    position: absolute;
+    top: -14px;
+    left: 1.3rem;
+    background: var(--brand-orange);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+}
+
+.bay-box h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0.6rem 0 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.bay-box h3 i {
+    color: var(--brand-orange);
+}
+
+.bay-box ul {
+    list-style: none;
+}
+
+.bay-box ul li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.55rem;
+    color: var(--text-dim);
+    font-size: 0.93rem;
+    line-height: 1.45;
+}
+
+.bay-box ul li::before {
+    content: "\25B8";
+    position: absolute;
+    left: 0;
+    color: var(--brand-yellow);
+}
+
+/* ========================================================= */
+/* ========== ЦЕХОВАЯ ДОСКА ПОКАЗАТЕЛЕЙ ======================= */
+/* ========================================================= */
+.chalkboard {
+    background:
+        radial-gradient(ellipse at top left, rgba(255,255,255,0.03), transparent 60%),
+        #10231a;
+    border: 10px solid #3b2a1c;
+    border-radius: 10px;
+    padding: 2.2rem 2rem;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.55);
+    margin-bottom: 1rem;
+}
+
+.chalk-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2.6rem;
+    padding-bottom: 1.8rem;
+    margin-bottom: 1.8rem;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.18);
+}
+
+.chalk-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 130px;
+}
+
+.chalk-metric-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 2.8rem);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+    line-height: 1;
+}
+
+.chalk-metric-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.status-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.1rem;
+}
+
+.status-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    transform: rotate(-0.6deg);
+}
+
+.status-card:nth-child(even) {
+    transform: rotate(0.6deg);
+}
+
+.status-name {
+    font-weight: 700;
+    color: var(--brand-yellow);
+    text-transform: uppercase;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+}
+
+.status-state {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.92rem;
+    margin-top: 0.45rem;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.status-dot.in-progress { background: var(--brand-orange); }
+.status-dot.waiting { background: #8a8a8a; }
+.status-dot.ready { background: #4caf50; }
+
+/* ========================================================= */
+/* ========== НАРЯД-ЗАКАЗ: ПУТЬ ОДНОГО РЕМОНТА =============== */
+/* ========================================================= */
+.order-slip {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem 2.1rem 2.2rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.order-slip-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem 2rem;
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 1.3rem;
+    margin-bottom: 1.8rem;
+}
+
+.slip-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.slip-field-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-faint);
+}
+
+.slip-field-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.slip-status {
+    color: var(--brand-yellow);
+}
+
+.order-slip-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.4rem;
+}
+
+.slip-stage {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.stage-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 50%;
+    background: var(--brand-orange);
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.slip-stage.done .stage-num {
+    background: #4caf50;
+    color: #0a0908;
+}
+
+.slip-stage h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.4rem;
+}
+
+.slip-stage p {
+    font-size: 0.92rem;
+    color: var(--text-dim);
+    line-height: 1.45;
+}
+
+.order-slip-stamp {
+    position: absolute;
+    right: 2rem;
+    bottom: 1.6rem;
+    border: 3px solid var(--brand-orange);
+    color: var(--brand-orange);
+    opacity: 0.55;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    transform: rotate(-8deg);
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .order-slip-stamp {
+        position: static;
+        display: inline-block;
+        margin-top: 1.4rem;
+        transform: none;
+    }
+}
+
+/* ========================================================= */
+/* ========== БЛАНК ЗАКАЗ-НАРЯДА (ЦЕНЫ) ======================= */
+/* ========================================================= */
+.price-slip {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem 2rem 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.price-slip-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    border-bottom: 2px dashed var(--border-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: var(--brand-yellow);
+    font-size: 0.95rem;
+}
+
+.price-slip-head-note {
+    color: var(--text-faint);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.price-slip-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    border-bottom: 1px dashed var(--border-color);
+    color: var(--text-dim);
+    font-size: 1rem;
+}
+
+.pos-num {
+    color: var(--text-faint);
+    margin-right: 0.5rem;
+}
+
+.pos-price {
+    color: var(--brand-yellow);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.price-slip-note {
+    margin-top: 1.3rem;
+    padding: 1rem 1.2rem;
+    background: rgba(54, 82, 217, 0.08);
+    border: 1px dashed var(--brand-yellow);
+    border-radius: 8px;
+    color: var(--brand-yellow);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.price-slip-note i {
+    margin-right: 0.4rem;
+}
+
+@media (max-width: 600px) {
+    .price-slip {
+        padding: 0.8rem 1.2rem 1.2rem;
+    }
+    .price-slip-row {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================================= */
+/* ========== ГАРАНТИЙНЫЙ ТАЛОН (ПОЧЕМУ МЫ) =================== */
+/* ========================================================= */
+.warranty-ticket {
+    position: relative;
+    background: var(--card-bg);
+    border: 2px dashed var(--brand-orange);
+    border-radius: 14px;
+    padding: 2.2rem 2.2rem 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.warranty-ticket-head {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.warranty-ticket-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--brand-yellow);
+    text-align: center;
+}
+
+.warranty-list {
+    list-style: none;
+}
+
+.warranty-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.warranty-list li:last-child {
+    border-bottom: none;
+}
+
+.warranty-list li i {
+    color: var(--brand-orange);
+    font-size: 1.15rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.warranty-list li strong {
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .warranty-ticket {
+        padding: 1.6rem 1.3rem 1.2rem;
+    }
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 780px) {
+    .page {
+        padding: 2rem 1rem 1.5rem;
+    }
+    .order-slip {
+        padding: 1.6rem 1.3rem 1.8rem;
+    }
+    .price-slip {
+        padding: 0.8rem 1.2rem 1.2rem;
+    }
+}

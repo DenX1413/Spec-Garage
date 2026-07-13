@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>СПЕЦТЕХНИК - Ремонт квадроциклов, снегоходов, лодок и спецтехники в Томске</title>
+    <meta name="description" content="ООО СПЕЦТЕХНИК - профессиональный ремонт и сервисное обслуживание спецтехники в Томске. Квадроциклы, снегоходы, вездеходы, моторные лодки, газонокосилки. Бесплатная диагностика, выезд мастера.">
+    <meta name="keywords" content="ремонт квадроциклов Томск, ремонт снегоходов, сервис лодочных моторов, ремонт вездеходов, заточка газонокосилок, СПЕЦТЕХНИК, мотосервис Томск, ремонт спецтехники, диагностика двигателей">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="frontend/images/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="frontend/images/favicon-16x16.png?v=2">
+    <link rel="shortcut icon" href="frontend/images/favicon.jpg?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="frontend/images/apple-touch-icon.png?v=2">
+
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS стили -->
+    <link rel="stylesheet" href="frontend/styles.css?v=5">
+</head>
+
+<body>
+    <!-- ШАПКА -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="#top" class="topbar-logo">
+                <img src="images/logo.jpg" alt="Логотип СПЕЦТЕХНИК">
+            </a>
+            <nav class="topbar-nav">
+                <a href="#services">боксы цеха</a>
+                <a href="#board">доска мастера</a>
+                <a href="#order">наряд-заказ</a>
+                <a href="#prices">прайс</a>
+                <a href="#why-us">гарантия</a>
+            </nav>
+            <a href="#request-form" class="topbar-btn"><i class="fas fa-wrench"></i> заявка на ремонт</a>
+        </div>
+    </header>
+
+    <!-- HERO (статика, без видео) -->
+    <section class="hero" id="top">
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-inner">
+            <span class="hero-eyebrow"><i class="fas fa-industry"></i> сервисный центр в томске</span>
+            <h1 class="hero-title">
+                РЕМОНТ<br>
+                <span class="hero-title-accent">СПЕЦТЕХНИКИ</span><br>
+                ПОД КЛЮЧ
+            </h1>
+            <p class="hero-subtitle">
+                Квадроциклы · снегоходы · вездеходы · лодочные моторы · газонокосилки.
+                Диагностика, капремонт двигателей, сварка, выезд мастера — честно и с гарантией.
+            </p>
+            <div class="hero-actions">
+                <a href="#request-form" class="btn btn-primary"><i class="fas fa-paper-plane"></i> оставить заявку</a>
+                <a href="tel:+73822320303" class="btn btn-outline"><i class="fas fa-phone-alt"></i> 8 (3822) 32-03-03</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat-item">
+                    <span class="hero-stat-number">9</span>
+                    <span class="hero-stat-label">направлений ремонта</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hero-stat-number">4</span>
+                    <span class="hero-stat-label">этапа «под ключ»</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hero-stat-number">100%</span>
+                    <span class="hero-stat-label">гарантия на работы</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-stripes"></div>
+    </section>
+
+    <div class="page">
+
+        <!-- БОКСЫ ЦЕХА: ВИДЫ ТЕХНИКИ И ТИПИЧНЫЕ РАБОТЫ -->
+        <div class="section-heading" id="services">боксы цеха</div>
+        <p class="section-lead">У каждого направления — свой бокс, свой инструмент и свой список типичных поломок. Ниже — с чем к нам приезжают чаще всего.</p>
+
+        <div class="bay-stand">
+            <div class="bay-box">
+                <span class="bay-tag">бокс 01</span>
+                <h3><i class="fas fa-motorcycle"></i> Квадроциклы</h3>
+                <ul>
+                    <li>обрыв и растяжение ремня вариатора</li>
+                    <li>люфты и стуки в ходовой — рычаги, шаровые, ступицы после бездорожья</li>
+                    <li>пробитые сайлентблоки и порванные пыльники ШРУС</li>
+                    <li>промывка, чистка и настройка вариатора</li>
+                </ul>
+            </div>
+            <div class="bay-box">
+                <span class="bay-tag">бокс 02</span>
+                <h3><i class="fas fa-snowplow"></i> Снегоходы</h3>
+                <ul>
+                    <li>сезонная консервация перед летним хранением</li>
+                    <li>замена свечей и приводного ремня</li>
+                    <li>регулировка натяжения гусеницы и подвески</li>
+                    <li>восстановление стартера, который не тянет в мороз</li>
+                </ul>
+            </div>
+            <div class="bay-box">
+                <span class="bay-tag">бокс 03</span>
+                <h3><i class="fas fa-truck-monster"></i> Вездеходы</h3>
+                <ul>
+                    <li>переборка и ремонт трансмиссии, раздаточной коробки</li>
+                    <li>обслуживание гермокоробок и герметичных узлов</li>
+                    <li>сварка рамы, силовых элементов и защиты</li>
+                    <li>замена колёсных редукторов и приводов</li>
+                </ul>
+            </div>
+            <div class="bay-box">
+                <span class="bay-tag">бокс 04</span>
+                <h3><i class="fas fa-ship"></i> Лодочные моторы</h3>
+                <ul>
+                    <li>winterization — консервация на зиму и расконсервация по весне</li>
+                    <li>замена помпы и крыльчатки водяного охлаждения</li>
+                    <li>ремонт редуктора и дейдвуда, замена сальников</li>
+                    <li>продувка и настройка карбюратора после простоя</li>
+                </ul>
+            </div>
+            <div class="bay-box">
+                <span class="bay-tag">бокс 05</span>
+                <h3><i class="fas fa-tools"></i> Бензоинструмент</h3>
+                <ul>
+                    <li>чистка и регулировка карбюратора после плохого топлива</li>
+                    <li>замена сцепления и муфты на бензопилах и триммерах</li>
+                    <li>ремонт стартера и антивибрационных узлов</li>
+                    <li>заточка и балансировка режущих органов</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ЦЕХОВАЯ ДОСКА ПОКАЗАТЕЛЕЙ -->
+        <div class="section-heading" id="board">доска мастера</div>
+        <p class="section-lead">Так примерно выглядит рабочая доска в цехе — по ней мастер видит, что происходит с техникой прямо сейчас.</p>
+
+        <div class="chalkboard">
+            <div class="chalk-metrics">
+                <div class="chalk-metric">
+                    <span class="chalk-metric-number">6</span>
+                    <span class="chalk-metric-label">единиц техники в работе</span>
+                </div>
+                <div class="chalk-metric">
+                    <span class="chalk-metric-number">1&nbsp;день</span>
+                    <span class="chalk-metric-label">в среднем на дефектовку</span>
+                </div>
+                <div class="chalk-metric">
+                    <span class="chalk-metric-number">5</span>
+                    <span class="chalk-metric-label">боксов цеха под разную технику</span>
+                </div>
+            </div>
+            <div class="status-board">
+                <div class="status-card">
+                    <div class="status-name">Квадроцикл, вариатор</div>
+                    <div class="status-state"><span class="status-dot in-progress"></span>в разборке — меняем ремень</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-name">Снегоход, ходовая</div>
+                    <div class="status-state"><span class="status-dot waiting"></span>ждём поставку запчасти</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-name">Лодочный мотор 40&nbsp;л.с.</div>
+                    <div class="status-state"><span class="status-dot ready"></span>собран, готов к выдаче</div>
+                </div>
+                <div class="status-card">
+                    <div class="status-name">Бензопила, карбюратор</div>
+                    <div class="status-state"><span class="status-dot ready"></span>отрегулирован, выдача сегодня</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- НАРЯД-ЗАКАЗ: ПУТЬ ОДНОГО РЕМОНТА -->
+        <div class="section-heading" id="order">путь одного наряда</div>
+        <p class="section-lead">Показываем на примере одного типового случая, как выглядит наряд-заказ от приёмки техники до её выдачи владельцу.</p>
+
+        <div class="order-slip">
+            <div class="order-slip-head">
+                <div class="slip-field">
+                    <span class="slip-field-label">наряд-заказ №</span>
+                    <span class="slip-field-value">26-0148</span>
+                </div>
+                <div class="slip-field">
+                    <span class="slip-field-label">техника</span>
+                    <span class="slip-field-value">снегоход, ремонт вариатора</span>
+                </div>
+                <div class="slip-field">
+                    <span class="slip-field-label">статус</span>
+                    <span class="slip-field-value slip-status">выдан клиенту</span>
+                </div>
+            </div>
+            <div class="order-slip-timeline">
+                <div class="slip-stage done">
+                    <div class="stage-num">1</div>
+                    <h3>Приёмка</h3>
+                    <p>Осмотр, мойка, фиксация жалобы владельца и видимых дефектов в бланке.</p>
+                </div>
+                <div class="slip-stage done">
+                    <div class="stage-num">2</div>
+                    <h3>Дефектовка</h3>
+                    <p>Разборка узла, замеры и точная причина неисправности — согласовали объём работ по телефону.</p>
+                </div>
+                <div class="slip-stage done">
+                    <div class="stage-num">3</div>
+                    <h3>Ремонт</h3>
+                    <p>Замена изношенных деталей, сборка узла, обкатка на стенде перед выдачей.</p>
+                </div>
+                <div class="slip-stage done">
+                    <div class="stage-num">4</div>
+                    <h3>Выдача</h3>
+                    <p>Проверка на ходу вместе с владельцем, гарантийный талон на выполненные работы.</p>
+                </div>
+            </div>
+            <div class="order-slip-stamp">выдано</div>
+        </div>
+
+        <!-- БЛАНК ЗАКАЗ-НАРЯДА: ОРИЕНТИРОВОЧНЫЕ ЦЕНЫ -->
+        <div class="section-heading" id="prices">бланк заказ-наряда</div>
+        <p class="section-lead">Так выглядит образец позиций в заказ-наряде. Итоговая цена всегда фиксируется в документе только после дефектовки техники.</p>
+
+        <div class="price-slip">
+            <div class="price-slip-head">
+                <span>образец заказ-наряда</span>
+                <span class="price-slip-head-note">цена уточняется после диагностики</span>
+            </div>
+            <div class="price-slip-row">
+                <span><span class="pos-num">01</span> Компьютерная диагностика двигателя и электроники</span>
+                <span class="pos-price">от 800 ₽</span>
+            </div>
+            <div class="price-slip-row">
+                <span><span class="pos-num">02</span> Замер компрессии, эндоскопия цилиндров</span>
+                <span class="pos-price">от 700 ₽</span>
+            </div>
+            <div class="price-slip-row">
+                <span><span class="pos-num">03</span> Плановое ТО: масло, фильтры, свечи</span>
+                <span class="pos-price">от 1 500 ₽</span>
+            </div>
+            <div class="price-slip-row">
+                <span><span class="pos-num">04</span> Замена ремня вариатора, регулировка</span>
+                <span class="pos-price">от 1 800 ₽</span>
+            </div>
+            <div class="price-slip-row">
+                <span><span class="pos-num">05</span> Капитальный ремонт ДВС</span>
+                <span class="pos-price">от 12 000 ₽</span>
+            </div>
+            <div class="price-slip-row">
+                <span><span class="pos-num">06</span> Ремонт лодочного мотора (2т/4т), замена помпы</span>
+                <span class="pos-price">от 3 500 ₽</span>
+            </div>
+            <div class="price-slip-row">
+                <span><span class="pos-num">07</span> Переборка редуктора / трансмиссии</span>
+                <span class="pos-price">от 5 000 ₽</span>
+            </div>
+            <div class="price-slip-row">
+                <span><span class="pos-num">08</span> Сварочные работы по алюминию и нержавейке</span>
+                <span class="pos-price">от 1 000 ₽</span>
+            </div>
+            <div class="price-slip-row">
+                <span><span class="pos-num">09</span> Выезд мастера по Томску</span>
+                <span class="pos-price">от 1 000 ₽</span>
+            </div>
+            <div class="price-slip-note"><i class="fas fa-circle-info"></i> Цены ориентировочные. Точную стоимость и сроки мастер вносит в заказ-наряд после осмотра и согласовывает с вами до начала ремонта.</div>
+        </div>
+
+        <!-- ГАРАНТИЙНЫЙ ТАЛОН СЕРВИСА -->
+        <div class="section-heading" id="why-us">гарантийный талон</div>
+        <p class="section-lead">Отрывной талон, который мы мысленно выдаём каждому клиенту вместе с техникой.</p>
+
+        <div class="warranty-ticket">
+            <div class="warranty-ticket-head">
+                <span class="warranty-ticket-title">гарантийный талон сервиса «спецтехник»</span>
+            </div>
+            <ul class="warranty-list">
+                <li><i class="fas fa-square-check"></i> <div><strong>Гарантия на работы и запчасти</strong><br>Отвечаем за то, что сделали, а не только выставляем счёт.</div></li>
+                <li><i class="fas fa-square-check"></i> <div><strong>Мастера по конкретной технике</strong><br>Каждый бокс закреплён за механиками, которые специализируются именно на этом типе техники.</div></li>
+                <li><i class="fas fa-square-check"></i> <div><strong>Выезд и срочный ремонт</strong><br>Можем приехать на место поломки по Томску и области, беремся за срочные заявки.</div></li>
+                <li><i class="fas fa-square-check"></i> <div><strong>Честная дефектовка</strong><br>Показываем снятые узлы и объясняем причину поломки, прежде чем что-то менять.</div></li>
+                <li><i class="fas fa-square-check"></i> <div><strong>Сопровождение до выдачи</strong><br>Держим в курсе на каждом этапе наряда — от приёмки до обкатки готовой техники.</div></li>
+            </ul>
+        </div>
+
+        <!-- ФОРМА ОБРАТНОЙ СВЯЗИ + ЯНДЕКС КАРТА -->
+        <div class="section-heading" id="request-form">оставьте заявку на ремонт</div>
+
+        <div class="contact-with-map animate-up delay-2">
+            <!-- Левая колонка: форма -->
+            <div class="form-column">
+                <h3>Запись в сервис</h3>
+                <p>Опишите проблему или укажите желаемую услугу. Мастер перезвонит для уточнения деталей и записи в удобное время.</p>
+
+                <form class="simple-form" action="https://formsubmit.co/ajax/SpectehniK-320303@yandex.ru" method="POST">
+                    <input type="hidden" name="_subject" value="Новая заявка с сайта СПЕЦТЕХНИК">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="name" placeholder="Ваше имя" required maxlength="25">
+                    <input type="tel" name="phone" placeholder="Ваш телефон" required>
+                    <textarea name="message" placeholder="Марка техники, неисправность, пожелания" rows="3" maxlength="500"></textarea>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> отправить заявку</button>
+                </form>
+
+                <div class="form-contacts">
+                    <p><i class="fas fa-phone-alt"></i> 8 (3822) 32-03-03</p>
+                    <p><i class="fas fa-envelope"></i> SpectehniK-320303@yandex.ru</p>
+                    <p><img src="/images/max-icon-3652d9.png" alt="Иконка MAX" width="20" height="20"> <a href="https://max.ru/u/f9LHodD0cOJaovd9xA3PEdH4Vramag7Xr8A9WSDQc_AybQz0CuES5yhDfMQ">8 983 232-03-03</a></p>
+                </div>
+            </div>
+
+            <!-- Правая колонка: Яндекс Карта -->
+            <div class="map-column">
+                <h4><i class="fas fa-map-marker-alt"></i> мы на карте</h4>
+                <div class="yandex-map-container">
+                    <iframe src="https://api-maps.yandex.ru/frame/v1/-/CTaxVYZT"
+                            width="100%"
+                            height="320"
+                            frameborder="0"
+                            allowfullscreen="true">
+                    </iframe>
+                </div>
+                <p class="map-address">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>Адрес:</strong> г. Томск, ул. Мичурина 47г стр.1<br>
+                    <span>(ориентир — переулок Сергея Лазо, рядом остановка «Сергея Лазо», удобный подъезд для техники)</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- ФИНАЛЬНАЯ ЦИТАТА -->
+        <hr class="divider">
+        <div class="footer-bottom">
+            <span><i class="fas fa-motorcycle"></i> Полный цикл обслуживания мототехники и спецтехники</span>
+            <span class="footer-slogan"><i class="fas fa-heart"></i> Чтобы техника не подвела в приключениях.</span>
+        </div>
+        <div class="footer-quote">
+            «Мы возвращаем технику к жизни. Чтобы техника не подвела, когда вы готовы к приключениям. СПЕЦТЕХНИК — возвращаем уверенность в каждой поездке.»
+        </div>
+        <div class="footer-copyright">
+            © 2026 «СПЕЦТЕХНИК». Все права защищены.
+        </div>
+    </div>
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollToTopBtn" class="scroll-top-btn" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Подключение скриптов -->
+    <script src="backend/send-form.js?v=2"></script>
+    <script src="backend/scroll-to-top.js?v=2"></script>
+</body>
+
+</html>
