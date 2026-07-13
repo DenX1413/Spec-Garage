@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "garage-static",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5504", "--directory", "C:\\Users\\kokok\\Desktop\\SiteSpec-Garage"],
+      "port": 5504
+    }
+  ]
+}
